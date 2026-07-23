@@ -182,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Setup Carousel
   initCarousel();
+
+  // 6. Scroll Reveal Observer
+  initScrollReveal();
 });
 
 // --- RENDER PRODUCTS GRID ---
@@ -858,4 +861,24 @@ function initCarousel() {
   prevBtn.addEventListener('click', resetAutoPlayTimer);
   nextBtn.addEventListener('click', resetAutoPlayTimer);
   dotsContainer.addEventListener('click', resetAutoPlayTimer);
+}
+
+// --- SCROLL REVEAL IMPLEMENTATION ---
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.scroll-reveal');
+  
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Unobserve after showing so we don't repeat the animation
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
 }
