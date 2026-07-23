@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshMart | Premium Online Grocery Store</title>
+  <meta name="description" content="Shop organic, fresh, and handpicked groceries at FreshMart. Free delivery and 24/7 support. Premium grocery shopping made simple.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div class="loader-wrapper" id="loader-wrapper">
+    <div class="loader-content">
+      <div class="loader-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping loader-icon"></i>
+        <div class="loader-glow"></div>
+      </div>
+      <h1 class="loader-logo">Fresh<span>Mart</span></h1>
+      <p class="loader-tagline">Harvesting Freshness For You...</p>
+      <div class="loader-progress-bar">
+        <div class="loader-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <i class="fa-solid fa-leaf logo-icon"></i>
+        <span>Fresh<span>Mart</span></span>
+      </a>
+
+      <!-- Search Bar (Desktop) -->
+      <div class="search-bar-container desktop-search">
+        <form class="search-form" onsubmit="event.preventDefault();">
+          <input type="text" id="search-input" placeholder="Search for fresh fruits, veggies, milk...">
+          <button type="submit" class="search-btn" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+          <li><a href="#products" class="nav-link">Shop</a></li>
+          <li><a href="#deals" class="nav-link">Deals</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        </ul>
+        <!-- Search Bar (Mobile Inside Nav) -->
+        <div class="search-bar-container mobile-search">
+          <form class="search-form" onsubmit="event.preventDefault();">
+            <input type="text" id="search-input-mobile" placeholder="Search groceries...">
+            <button type="submit" class="search-btn" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Search trigger for smaller screens (hidden on desktop) -->
+        <button class="action-btn search-trigger" id="search-trigger" aria-label="Toggle Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button class="action-btn wishlist-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge">0</span>
+        </button>
+
+        <button class="action-btn cart-trigger" id="cart-trigger" aria-label="Open Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge cart-count">0</span>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown Mobile Search Bar -->
+    <div class="mobile-search-dropdown" id="mobile-search-dropdown">
+      <form class="search-form" onsubmit="event.preventDefault();">
+        <input type="text" id="search-input-dropdown" placeholder="Search fresh food...">
+        <button type="submit" class="search-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-background"></div>
+    <div class="floating-decor leaf-1"><i class="fa-solid fa-leaf"></i></div>
+    <div class="floating-decor leaf-2"><i class="fa-solid fa-seedling"></i></div>
+    <div class="floating-decor leaf-3"><i class="fa-solid fa-carrot"></i></div>
+    <div class="floating-decor leaf-4"><i class="fa-solid fa-lemon"></i></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-subtitle"><i class="fa-solid fa-sparkles"></i> 100% Organic & Healthy Foods</span>
+        <h2 class="hero-title animate-text">Bring Freshness <br>To Your <span>Kitchen</span></h2>
+        <p class="hero-description animate-text-delay">We deliver high-quality organic groceries, handpicked fresh vegetables, dairy products, and pantry essentials directly to your doorstep.</p>
+        <div class="hero-buttons animate-text-delay-more">
+          <a href="#products" class="btn btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#deals" class="btn btn-secondary">View Deals</a>
+        </div>
+        <div class="hero-stats animate-text-delay-more">
+          <div class="stat-item">
+            <h3>15k+</h3>
+            <p>Happy Customers</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <h3>80+</h3>
+            <p>Premium Brands</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Organic Certified</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-floating-card card-1">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div>
+            <h4>Free Shipping</h4>
+            <p>On orders over $35</p>
+          </div>
+        </div>
+        <div class="hero-floating-card card-2">
+          <i class="fa-solid fa-star text-warning"></i>
+          <div>
+            <h4>4.9 Rating</h4>
+            <p>From 5k+ reviews</p>
+          </div>
+        </div>
+        <!-- Hero main image showcasing groceries from web -->
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=700&q=80" alt="Fresh Groceries Basket" class="hero-img">
+        <div class="hero-image-circle"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section">
+    <div class="features-container">
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid fa-truck-moving"></i>
+        </div>
+        <h3>Free & Fast Delivery</h3>
+        <p>Deliver to your doorstep within 2 hours for local orders.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <h3>100% Organic Foods</h3>
+        <p>Straight from local certified organic farms to your table.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid fa-wallet"></i>
+        </div>
+        <h3>Secured Payment</h3>
+        <p>100% encrypted, secure transactions with multiple payment modes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <i class="fa-solid fa-rotate-left"></i>
+        </div>
+        <h3>Easy Return Policy</h3>
+        <p>No questions asked return and immediate refund if unsatisfied.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories-section" id="categories">
+    <div class="section-header">
+      <span class="sub-title">What We Offer</span>
+      <h2 class="main-title">Explore Our Categories</h2>
+      <div class="title-underline"></div>
+    </div>
+    <div class="categories-grid" id="categories-grid">
+      <!-- Category 1 -->
+      <div class="category-card" data-category="fruits-veg">
+        <div class="category-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1610832958506-ee563361f155?auto=format&fit=crop&w=400&q=80" alt="Fruits & Vegetables">
+          <div class="category-overlay"></div>
+        </div>
+        <h3>Fruits & Veggies</h3>
+        <span class="item-count">18 Items</span>
+        <a href="#products" class="category-btn" onclick="setCategoryFilter('fruits-veg')"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      <!-- Category 2 -->
+      <div class="category-card" data-category="dairy">
+        <div class="category-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=400&q=80" alt="Dairy & Eggs">
+          <div class="category-overlay"></div>
+        </div>
+        <h3>Dairy & Eggs</h3>
+        <span class="item-count">12 Items</span>
+        <a href="#products" class="category-btn" onclick="setCategoryFilter('dairy')"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      <!-- Category 3 -->
+      <div class="category-card" data-category="bakery">
+        <div class="category-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Bakery">
+          <div class="category-overlay"></div>
+        </div>
+        <h3>Fresh Bakery</h3>
+        <span class="item-count">8 Items</span>
+        <a href="#products" class="category-btn" onclick="setCategoryFilter('bakery')"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      <!-- Category 4 -->
+      <div class="category-card" data-category="meat">
+        <div class="category-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=400&q=80" alt="Meat & Seafood">
+          <div class="category-overlay"></div>
+        </div>
+        <h3>Meat & Seafood</h3>
+        <span class="item-count">15 Items</span>
+        <a href="#products" class="category-btn" onclick="setCategoryFilter('meat')"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      <!-- Category 5 -->
+      <div class="category-card" data-category="beverages">
+        <div class="category-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1527960656306-ff377bc5866e?auto=format&fit=crop&w=400&q=80" alt="Beverages">
+          <div class="category-overlay"></div>
+        </div>
+        <h3>Beverages</h3>
+        <span class="item-count">20 Items</span>
+        <a href="#products" class="category-btn" onclick="setCategoryFilter('beverages')"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      <!-- Category 6 -->
+      <div class="category-card" data-category="snacks">
+        <div class="category-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1599490659213-e2b9527b0f76?auto=format&fit=crop&w=400&q=80" alt="Snacks">
+          <div class="category-overlay"></div>
+        </div>
+        <h3>Snacks</h3>
+        <span class="item-count">14 Items</span>
+        <a href="#products" class="category-btn" onclick="setCategoryFilter('snacks')"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="products">
+    <div class="section-header">
+      <span class="sub-title">Fresh Selection</span>
+      <h2 class="main-title">Our Premium Products</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <!-- Product Controls -->
+    <div class="products-controls">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="fruits-veg">Fruits & Veggies</button>
+        <button class="filter-btn" data-filter="dairy">Dairy & Eggs</button>
+        <button class="filter-btn" data-filter="bakery">Bakery</button>
+        <button class="filter-btn" data-filter="meat">Meat & Seafood</button>
+        <button class="filter-btn" data-filter="beverages">Beverages</button>
+        <button class="filter-btn" data-filter="snacks">Snacks</button>
+      </div>
+      <div class="sort-container">
+        <label for="sort-select">Sort By:</label>
+        <select id="sort-select" class="sort-select">
+          <option value="default">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Search Results Helper Banner -->
+    <div class="search-status-banner hidden" id="search-status-banner">
+      <p>Showing search results for "<span id="search-keyword-display"></span>" (<span id="search-count-display">0</span> items found)</p>
+      <button class="clear-search-btn" id="clear-search-btn">Reset Search <i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid animate-grid" id="products-grid">
+      <!-- Products will be generated dynamically by JS -->
+    </div>
+  </section>
+
+  <!-- Special Deal Banner / Countdown -->
+  <section class="deal-section" id="deals">
+    <div class="deal-container">
+      <div class="deal-image">
+        <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=600&q=80" alt="Fresh Organic Oranges">
+        <div class="deal-badge">-30% OFF</div>
+      </div>
+      <div class="deal-content">
+        <span class="deal-subtitle">Deal Of The Week</span>
+        <h2 class="deal-title">Organic Blood Oranges</h2>
+        <p class="deal-description">Get premium quality sweet, organic blood oranges imported directly from Mediterranean orchards. Loaded with Vitamin C and natural flavor.</p>
+        <div class="deal-pricing">
+          <span class="new-price">$4.89</span>
+          <span class="old-price">$6.99</span>
+          <span class="unit">/ kg</span>
+        </div>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown-wrapper" id="countdown-timer">
+          <div class="countdown-box">
+            <span class="count-num" id="days">02</span>
+            <span class="count-label">Days</span>
+          </div>
+          <div class="countdown-box">
+            <span class="count-num" id="hours">14</span>
+            <span class="count-label">Hours</span>
+          </div>
+          <div class="countdown-box">
+            <span class="count-num" id="minutes">45</span>
+            <span class="count-label">Mins</span>
+          </div>
+          <div class="countdown-box">
+            <span class="count-num" id="seconds">58</span>
+            <span class="count-label">Secs</span>
+          </div>
+        </div>
+
+        <a href="#products" class="btn btn-primary" onclick="triggerPromoBuy()">Grab Offer Now <i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials / Reviews Section -->
+  <section class="reviews-section" id="reviews">
+    <div class="section-header">
+      <span class="sub-title">Testimonials</span>
+      <h2 class="main-title">What Our Customers Say</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <!-- Review Carousel -->
+    <div class="reviews-carousel-wrapper">
+      <div class="reviews-track" id="reviews-track">
+        <!-- Slide 1 -->
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"FreshMart has completely changed how I shop for vegetables. The organic options are always fresh and are delivered right to my apartment. The 2-hour delivery is insanely fast!"</p>
+            <div class="reviewer-info">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Customer Sarah Jenkins" class="reviewer-avatar">
+              <div>
+                <h4>Sarah Jenkins</h4>
+                <p>Verified Customer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"The bakery items are spectacular! The sourdough bread arrives still warm sometimes. Their customer service is top-notch; when they ran out of a dairy item, they refunded it instantly."</p>
+            <div class="reviewer-info">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Customer Michael Chang" class="reviewer-avatar">
+              <div>
+                <h4>Michael Chang</h4>
+                <p>Verified Customer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star-half-stroke"></i>
+            </div>
+            <p class="review-text">"I love their zero-waste packaging options. Everything from the fruits to the fish was fresh and well packed. Will definitely order weekly. Five stars for the amazing UI of the website!"</p>
+            <div class="reviewer-info">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Customer Amanda Ross" class="reviewer-avatar">
+              <div>
+                <h4>Amanda Ross</h4>
+                <p>Food Blogger</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation -->
+      <div class="carousel-nav">
+        <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Previous Review">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="carousel-dots" id="carousel-dots">
+          <!-- Dots will be added by JS -->
+        </div>
+        <button class="carousel-btn next-btn" id="carousel-next" aria-label="Next Review">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Bar -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2>Subscribe To Our Newsletter</h2>
+        <p>Get weekly updates on hot discounts, healthy recipes, and new organic arrivals.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); triggerNewsletterSub();">
+        <input type="email" id="newsletter-email" placeholder="Your Email Address" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <!-- Column 1: About -->
+        <div class="footer-col brand-col">
+          <a href="#" class="logo footer-logo">
+            <i class="fa-solid fa-leaf logo-icon"></i>
+            <span>Fresh<span>Mart</span></span>
+          </a>
+          <p class="brand-desc">Your ultimate destination for fresh, organic, and locally sourced groceries. We bridge the gap between quality farms and your dining table.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#products">Shop Products</a></li>
+            <li><a href="#deals">Special Deals</a></li>
+            <li><a href="#reviews">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Categories Links -->
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <ul class="footer-links">
+            <li><a href="#products" onclick="setCategoryFilter('fruits-veg')">Fruits & Vegetables</a></li>
+            <li><a href="#products" onclick="setCategoryFilter('dairy')">Dairy & Eggs</a></li>
+            <li><a href="#products" onclick="setCategoryFilter('bakery')">Fresh Bakery</a></li>
+            <li><a href="#products" onclick="setCategoryFilter('meat')">Meat & Seafood</a></li>
+            <li><a href="#products" onclick="setCategoryFilter('beverages')">Beverages & Juices</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact info -->
+        <div class="footer-col contact-col">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>123 Organic St, Green Valley, CA 90210</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 (555) 234-5678</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>support@freshmart.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon - Sun: 8:00 AM - 10:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>&copy; 2026 FreshMart Grocery Store. All rights reserved.</p>
+        <div class="payment-partners">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-paypal" title="Paypal"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer (Slides in from Right) -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Shopping Bag (<span class="cart-count">0</span>)</h3>
+      <button class="close-cart-btn" id="close-cart-btn" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    
+    <!-- Cart Items Container -->
+    <div class="cart-items-wrapper" id="cart-items-wrapper">
+      <!-- Empty Cart Message -->
+      <div class="empty-cart-message" id="empty-cart-message">
+        <i class="fa-solid fa-bag-shopping empty-icon"></i>
+        <p>Your bag is currently empty.</p>
+        <a href="#products" class="btn btn-primary close-cart-drawer-action">Start Shopping</a>
+      </div>
+      <!-- Dynamic list of items -->
+      <div class="cart-items-list hidden" id="cart-items-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Cart Footer Section -->
+    <div class="cart-drawer-footer hidden" id="cart-drawer-footer">
+      <div class="cart-totals">
+        <div class="total-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="total-row">
+          <span>Delivery Charge:</span>
+          <span id="cart-delivery">$3.99</span>
+        </div>
+        <div class="total-row discount-row hidden" id="discount-row">
+          <span>Discount (Promo):</span>
+          <span id="cart-discount">-$0.00</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>Total:</span>
+          <span id="cart-grand-total">$0.00</span>
+        </div>
+      </div>
+      
+      <!-- Promo Code Field -->
+      <div class="promo-code-container">
+        <input type="text" id="promo-input" placeholder="Enter promo code (FRESH20)">
+        <button type="button" class="btn btn-apply-promo" onclick="applyPromoCode()">Apply</button>
+      </div>
+      <p class="promo-feedback-msg" id="promo-feedback"></p>
+
+      <button class="btn btn-primary checkout-btn" onclick="openCheckoutModal()">
+        Proceed to Checkout <i class="fa-solid fa-circle-check"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Success Modal -->
+  <div class="modal-overlay" id="checkout-modal-overlay">
+    <div class="modal-card">
+      <div class="modal-success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h2>Order Placed Successfully!</h2>
+      <p>Thank you for shopping at FreshMart. Your order has been registered and is being prepared for delivery.</p>
+      <div class="order-details-box">
+        <div class="order-detail-row">
+          <span>Order ID:</span>
+          <strong id="modal-order-id">#FM-89271</strong>
+        </div>
+        <div class="order-detail-row">
+          <span>Estimated Delivery:</span>
+          <strong id="modal-delivery-time">Under 2 hours</strong>
+        </div>
+        <div class="order-detail-row">
+          <span>Total Paid:</span>
+          <strong id="modal-total-paid">$0.00</strong>
+        </div>
+      </div>
+      <button class="btn btn-primary close-modal-btn" onclick="closeCheckoutModal()">Back to Shop</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- JS Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
